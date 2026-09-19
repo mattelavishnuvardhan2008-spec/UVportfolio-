@@ -1,90 +1,80 @@
 # Uvaraj — Freelance Portfolio Website
 
-A fast, responsive portfolio website for a freelance web developer and designer. The whole site is **one file** (`index.html`) with the design, scripts and profile photo built in. No build step, no dependencies, and no extra files to keep in sync.
+A fast, responsive portfolio website for a freelance web developer and designer, built with plain **HTML, CSS and JavaScript**. No build step and no dependencies.
+
+## Files
+
+```
+├── index.html   # the complete website (design, content and scripts)
+├── uvaraj.jpg   # profile photo
+└── README.md
+```
+
+All three files live in the main folder. There are no subfolders.
 
 ## Features
 
 - Home, About and Services pages with single-page navigation
-- Hero section with profile photo, availability badge and call-to-action buttons
+- Hero section with profile photo and call-to-action buttons
 - Selected work, skills, background, process, pricing packages and FAQ
 - Contact form that opens the visitor's email app
 - Mobile-first layout with automatic light and dark mode
 
-## Project structure
-
-```
-uvaraj-portfolio/
-├── index.html   # the complete website
-└── README.md
-```
-
 ## Run locally
 
-Download `index.html` and open it in any browser.
+Put `index.html` and `uvaraj.jpg` in the same folder and open `index.html` in a browser.
 
 ## Customize
 
-Open `index.html` in a text editor (on GitHub, tap the pencil icon) and edit the text directly.
+Open `index.html` and edit the text directly. On GitHub, tap the file, then the pencil icon.
 
 | What | How to find it |
 | --- | --- |
-| Email address | Search for `your.email@example.com` (appears twice) |
-| Phone number | Search for `+91 00000 00000` and `+910000000000` |
+| Email | Search for `your.email@example.com` (appears twice) |
+| Phone | Search for `+91 00000 00000` and `+910000000000` |
 | Location | Search for `Hyderabad` |
-| Projects, prices, skills | Search for the section headings, such as `Selected work` or `Packages` |
+| Projects, prices, skills | Search for `Selected work`, `Packages` or `Skills` |
 | About text and education | Search for `About Uvaraj` |
-| Colors | Change the values under `:root` near the top of the `<style>` section |
+| Colors | Edit the values under `:root` at the top of the `<style>` section |
 
-### Change the profile photo
+### Change the photo
 
-The photo is stored inside `index.html` as a long block of text beginning with `data:image/jpeg;base64,`, so it can't be swapped by uploading a file. Two ways to change it:
+Upload a new photo named `uvaraj.jpg` and replace the old one. If you use a different file name, change this line near the bottom of `index.html`:
 
-1. Ask Claude (or any developer) to embed your new photo in `index.html`, or
-2. Upload your new photo to the repository as `photo.jpg`, then replace each long `src="data:image/jpeg;base64,..."` value with `src="photo.jpg"`.
+```js
+var PHOTO="uvaraj.jpg";
+```
+
+If the photo file is missing, the site shows a plum tile with the letter "U" instead of a broken image.
+
+## Upload to GitHub (from a phone)
+
+1. Open github.com and tap **+ → New repository**. Name it `uvaraj-portfolio`, choose **Public**, and tap **Create repository**.
+2. Tap **uploading an existing file**.
+3. Select `index.html`, `uvaraj.jpg` and `README.md`, then tap **Commit changes**.
 
 ## Deploy with GitHub Pages
 
-1. Open the repository on github.com and go to **Settings → Pages**.
-2. Under **Branch**, select `main` and the `/ (root)` folder, then tap **Save**.
-3. After one to two minutes, your site is live at `https://<your-username>.github.io/<repository-name>/`.
+1. In the repository, open **Settings → Pages**.
+2. Under **Branch**, choose `main` and `/ (root)`, then tap **Save**.
+3. After one to two minutes, the site is live at `https://<your-username>.github.io/<repository-name>/`.
 
 ## Deploy with Vercel
 
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-2. Tap **Add New → Project** and import this repository.
-3. Leave the settings unchanged:
-   - **Framework Preset:** Other
-   - **Build Command:** empty
-   - **Output Directory:** empty
-4. Tap **Deploy**. Your site goes live at a link like `https://uvaraj-portfolio.vercel.app`.
+1. Sign in at [vercel.com](https://vercel.com) with GitHub.
+2. Tap **Add New → Project** and import the repository.
+3. Leave the settings unchanged (Framework Preset: **Other**, no build command) and tap **Deploy**.
 
-Every time you commit a change to GitHub, Vercel redeploys automatically.
-
-## Update the site
-
-1. Open `index.html` in the repository and tap the pencil icon.
-2. Make your changes and tap **Commit changes**.
-3. Wait one to two minutes, then reload the site.
+Every commit to GitHub redeploys the site automatically.
 
 ## Troubleshooting
 
-- **Site shows a 404 page:** the file must be named exactly `index.html`, in lowercase, in the main folder of the repository.
-- **Old version still showing:** wait a minute, then close the tab and open the link again.
-- **Photo missing:** make sure the whole `index.html` was uploaded, since the photo is part of that file.
-
-## Make the contact form send messages directly (optional)
-
-The form currently opens the visitor's email app. To receive messages without that step, use a free service such as [Formspree](https://formspree.io):
-
-1. Create a form on Formspree and copy its endpoint URL.
-2. In `index.html`, change `<form id="cform" novalidate>` to `<form id="cform" action="YOUR_ENDPOINT_URL" method="POST">`.
-3. Remove the `cform` submit handler from the script section.
+- **Photo not showing:** the file must be named exactly `uvaraj.jpg` (lowercase) and sit in the same folder as `index.html`.
+- **404 page:** the main file must be named exactly `index.html`.
+- **Old version showing:** wait a minute, then close the tab and reopen the link.
 
 ## Tech
 
-- HTML5, CSS3, vanilla JavaScript
-- Fonts: [Fraunces](https://fonts.google.com/specimen/Fraunces) and [Manrope](https://fonts.google.com/specimen/Manrope) via Google Fonts
-
-## License
+HTML5, CSS3, vanilla JavaScript. Fonts: Fraunces and Manrope via Google Fonts.
 
 © 2026 Uvaraj. All rights reserved.
